@@ -53,4 +53,39 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
+
+const Layout = ({ pageTitle, children }) => {
+  const data = useStaticQuery(graphql`
+  /* Copy-paste je query van GraphiQL hier, 
+   en delete de query naam "MyQuery" */
+`)
+  // return waarde
+}
+
+// ...
+<nav className={nav}>
+  <header className={siteTitle}>
+    <h1>{data.site.siteMetadata.title}</h1>
+  </header>
+  <ul className={navLinks}>
+    <li></li>
+    <li className={navLinkItem}>
+      <Link className={navLinkText} to="/">
+        Home
+      </Link>
+    </li>
+    <li className={navLinkItem}>
+      <Link className={navLinkText} to="/about">
+        About
+      </Link>
+    </li>
+    <li className={navLinkItem}>
+      <Link className={navLinkText} to="/artists">
+        Artists
+      </Link>
+    </li>
+  </ul>
+</nav>
+// ...
+
 export default Layout
